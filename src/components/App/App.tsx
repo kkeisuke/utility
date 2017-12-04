@@ -13,6 +13,7 @@ import {
 } from 'mobx-react';
 
 import Sidebar from '../Sidebar/Sidebar';
+import Footer from '../Footer/Footer';
 import Top from '../Top/Top';
 import SqlFormatter from '../SqlFormatter/SqlFormatter';
 import NotFound from './NotFound';
@@ -45,6 +46,7 @@ class App extends React.Component {
               <Route path="/sql_formatter" component={SqlFormatter}/>
               <Route component={NotFound}/>
             </Switch>
+            <Footer />
           </div>
         </div>
       </Router>

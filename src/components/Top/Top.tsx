@@ -42,18 +42,6 @@ class Top extends React.Component {
         <Segment basic={true}>
           utility tools by <a href="http://kkeisuke.com" target="_blank">kkeisuke.com</a>
         </Segment>
-        <Segment basic={true}>
-          <List>
-            <List.Item><a href="https://twitter.com/intent/tweet" className="twitter-share-button">Tweet</a></List.Item>
-            <List.Item><a href="https://twitter.com/kkeisuke" className="twitter-follow-button" data-show-count="false">Follow @kkeisuke</a></List.Item>
-            <List.Item>
-              <a href="http://b.hatena.ne.jp/entry/" className="hatena-bookmark-button" data-hatena-bookmark-layout="basic-counter" title="このエントリーをはてなブックマークに追加">
-                <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" />
-              </a>
-            </List.Item>
-            <List.Item><a className="github-button" href="https://github.com/kkeisuke/utility" data-icon="octicon-star" data-count-href="/kkeisuke/utility/stargazers" data-count-api="/repos/kkeisuke/utility#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star kkeisuke/utility on GitHub">Star</a></List.Item>
-          </List>
-        </Segment>
         <Header as="h2" dividing={true}>Contents</Header>
         <Segment basic={true}>
           <List divided={true} size="large">
