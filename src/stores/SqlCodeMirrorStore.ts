@@ -45,7 +45,7 @@ export default class SqlCodeMirrorStore {
   constructor() {
     const mode: string = this.getMode();
     if (mode) {
-      this.options.mode = mode;
+      this.setMode(mode);
     }
   }
 
@@ -59,6 +59,9 @@ export default class SqlCodeMirrorStore {
 
   setMode(value: string) {
     this.options.mode = value;
+  }
+
+  setlocalStorage(value: string) {
     if (window.localStorage) {
       window.localStorage.setItem(this.localStorageKey, value);
     }
@@ -66,5 +69,6 @@ export default class SqlCodeMirrorStore {
 
   @action.bound setOptions(e: React.ChangeEvent<HTMLSelectElement>, {value}: FormProps) {
     this.setMode(value);
+    this.setlocalStorage(value);
   }
 }

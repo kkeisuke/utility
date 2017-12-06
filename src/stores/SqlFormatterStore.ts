@@ -19,10 +19,10 @@ export default class SqlFormatterStore {
   constructor() {
     const text: string = this.getText();
     if (text) {
-      this.text = text;
-      this.sql = sqlFormatter.format(text);
+      this.setText(text);
+      this.setSql(sqlFormatter.format(text));
     } else {
-      this.sql = this.defaultText;
+      this.setSql(this.defaultText);
     }
   }
 
@@ -36,6 +36,9 @@ export default class SqlFormatterStore {
 
   setText(text: string) {
     this.text = text;
+  }
+
+  setlocalStorage(text: string) {
     if (window.localStorage) {
       window.localStorage.setItem(this.localStorageKey, text);
     }
@@ -47,6 +50,7 @@ export default class SqlFormatterStore {
 
   @action.bound format(e: React.ChangeEvent<HTMLTextAreaElement>) {
     this.setText(e.target.value);
+    this.setlocalStorage(e.target.value);
     this.setSql(sqlFormatter.format(e.target.value));
   }
 
