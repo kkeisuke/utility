@@ -8,11 +8,11 @@ utility tools by kkeisuke.com
 
 ### SQL format
 
-![SQL format](screenshot/sqlformat.png)
+![SQL format](public/static/media/sqlformat.png)
 
 ### JSON format
 
-![JSON format](screenshot/jsonformat.png)
+![JSON format](public/static/media/jsonformat.png)
 
 ---
 
