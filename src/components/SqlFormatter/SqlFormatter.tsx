@@ -38,7 +38,9 @@ class SqlFormatter extends React.Component {
           <Icon name="code" />SQL format
         </Header>
         <Form>
-          <Form.TextArea label="SQL" value={sqlFormatter.text} onChange={sqlFormatter.format} />
+          <Form.Group widths="equal">
+            <Form.TextArea label="SQL" value={sqlFormatter.text} onChange={sqlFormatter.format} />
+          </Form.Group>
           <Form.Group>
             <Form.Select label="mode" options={sqlCodeMirror.modes} value={sqlCodeMirror.options.mode} onChange={sqlCodeMirror.setOptions} />
           </Form.Group>
