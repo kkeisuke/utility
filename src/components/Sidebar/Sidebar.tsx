@@ -34,6 +34,12 @@ class Sidebar extends React.Component {
         <Menu.Item name={router.route.sqlFormatter} active={router.isActive(router.route.sqlFormatter)} onClick={router.goTo}>
           <Icon name="code" />SQL format
         </Menu.Item>
+        <Menu.Item name={router.route.jsonFormatter} active={router.isActive(router.route.jsonFormatter)} onClick={router.goTo}>
+          <Icon name="code" />JSON format
+        </Menu.Item>
+        <Menu.Item href="https://plantuml-editor.kkeisuke.com/" target="_blank">
+          <Icon name="external" />PlantUML Editor
+        </Menu.Item>
       </Menu>
     );
   }

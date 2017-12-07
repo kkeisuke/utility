@@ -8,11 +8,15 @@ import './index.css';
 import RouterStore from './stores/RouterStore';
 import SqlFormatterStore from './stores/SqlFormatterStore';
 import SqlCodeMirrorStore from './stores/SqlCodeMirrorStore';
+import JsonFormatterStore from './stores/JsonFormatterStore';
+import JsonCodeMirrorStore from './stores/JsonCodeMirrorStore';
 
 const stores = {
   router: new RouterStore(),
   sqlFormatter: new SqlFormatterStore(),
   sqlCodeMirror: new SqlCodeMirrorStore(),
+  jsonFormatter: new JsonFormatterStore(),
+  jsonCodeMirror: new JsonCodeMirrorStore(),
 };
 
 ReactDOM.render(

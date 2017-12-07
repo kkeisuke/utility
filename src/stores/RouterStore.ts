@@ -12,7 +12,8 @@ export default class RouterStore {
   history = createBrowserHistory();
   route = {
     top: '/',
-    sqlFormatter: '/sql_formatter'
+    sqlFormatter: '/sql_formatter',
+    jsonFormatter: '/json_formatter',
   };
 
   @action.bound isActive(path: string): boolean {

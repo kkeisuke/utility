@@ -16,12 +16,14 @@ import Sidebar from '../Sidebar/Sidebar';
 import Footer from '../Footer/Footer';
 import Top from '../Top/Top';
 import SqlFormatter from '../SqlFormatter/SqlFormatter';
+import JsonFormatter from '../JsonFormatter/JsonFormatter';
 import NotFound from './NotFound';
 
 import 'semantic-ui-css/semantic.min.css';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/solarized.css';
 import 'codemirror/mode/sql/sql.js';
+import 'codemirror/mode/javascript/javascript.js';
 import './App.css';
 
 interface Iprops {
@@ -44,6 +46,7 @@ class App extends React.Component {
             <Switch>
               <Route exact={true} path="/" component={Top}/>
               <Route path="/sql_formatter" component={SqlFormatter}/>
+              <Route path="/json_formatter" component={JsonFormatter}/>
               <Route component={NotFound}/>
             </Switch>
             <Footer />
