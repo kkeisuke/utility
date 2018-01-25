@@ -20,7 +20,7 @@ export default class SqlFormatterStore {
     const text: string = this.getText();
     if (text) {
       this.setText(text);
-      this.setSql(sqlFormatter.format(text));
+      this.setSql(this.sqlFormat(text));
     } else {
       this.setSql(this.defaultText);
     }
@@ -48,10 +48,14 @@ export default class SqlFormatterStore {
     this.sql = text || this.defaultText;
   }
 
+  sqlFormat(text: string): string {
+    return sqlFormatter.format(text).split(';').join('\n;\n');
+  }
+
   @action.bound format(e: React.ChangeEvent<HTMLTextAreaElement>) {
     this.setText(e.target.value);
     this.setlocalStorage(e.target.value);
-    this.setSql(sqlFormatter.format(e.target.value));
+    this.setSql(this.sqlFormat(e.target.value));
   }
 
   @action.bound changeSql(editor: codemirror.Editor, data: codemirror.EditorChange, value: string) {
