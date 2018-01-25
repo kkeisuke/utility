@@ -39,7 +39,7 @@ class SqlFormatter extends React.Component {
         </Header>
         <Form>
           <Form.Group widths="equal">
-            <Form.TextArea label="SQL" value={sqlFormatter.text} placeholder="paste unformatted SQL" onChange={sqlFormatter.format} />
+            <Form.TextArea label="SQL" value={sqlFormatter.text} placeholder="paste unformatted SQL" onChange={sqlFormatter.format} autoHeight={true} />
           </Form.Group>
           <Form.Group>
             <Form.Select label="mode" options={sqlCodeMirror.modes} value={sqlCodeMirror.options.mode} onChange={sqlCodeMirror.setOptions} />
