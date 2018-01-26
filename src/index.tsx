@@ -10,6 +10,7 @@ import SqlFormatterStore from './stores/SqlFormatterStore';
 import SqlCodeMirrorStore from './stores/SqlCodeMirrorStore';
 import JsonFormatterStore from './stores/JsonFormatterStore';
 import JsonCodeMirrorStore from './stores/JsonCodeMirrorStore';
+import QrcodeStore from './stores/QrcodeStore';
 
 const stores = {
   router: new RouterStore(),
@@ -17,6 +18,7 @@ const stores = {
   sqlCodeMirror: new SqlCodeMirrorStore(),
   jsonFormatter: new JsonFormatterStore(),
   jsonCodeMirror: new JsonCodeMirrorStore(),
+  qrcode: new QrcodeStore(),
 };
 
 ReactDOM.render(

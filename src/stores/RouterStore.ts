@@ -14,6 +14,7 @@ export default class RouterStore {
     top: '/',
     sqlFormatter: '/sql_formatter',
     jsonFormatter: '/json_formatter',
+    qrcode: '/qrcode',
   };
 
   @action.bound isActive(path: string): boolean {

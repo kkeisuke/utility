@@ -52,7 +52,7 @@ class Top extends React.Component {
                   <Link to={router.route.sqlFormatter}>SQL format</Link>
                 </List.Header>
                 <List.Description>
-                  pretty-printing SQL queries by <a href="https://github.com/zeroturnaround/sql-formatter" target="_blank">zeroturnaround/sql-formatter</a>.
+                  pretty-printing SQL queries. <a href="https://github.com/zeroturnaround/sql-formatter" target="_blank">zeroturnaround/sql-formatter <Icon name="external" size="small" /></a>.
                 </List.Description>
               </List.Content>
             </List.Item>
@@ -63,7 +63,18 @@ class Top extends React.Component {
                   <Link to={router.route.jsonFormatter}>JSON format</Link>
                 </List.Header>
                 <List.Description>
-                  pretty-printing JSON. I referred to <a href="https://stackoverflow.com/questions/4810841/how-can-i-pretty-print-json-using-javascript" target="_blank">stackoverflow.com <Icon name="external" size="small" /></a>
+                  pretty-printing JSON. <a href="https://stackoverflow.com/questions/4810841/how-can-i-pretty-print-json-using-javascript" target="_blank">stackoverflow.com <Icon name="external" size="small" /></a>
+                </List.Description>
+              </List.Content>
+            </List.Item>
+            <List.Item>
+              <List.Icon name="qrcode" size="large" verticalAlign="middle" />
+              <List.Content>
+                <List.Header>
+                  <Link to={router.route.qrcode}>QRCode</Link>
+                </List.Header>
+                <List.Description>
+                  qr code generator. <a href="https://github.com/soldair/node-qrcode" target="_blank">soldair/node-qrcode <Icon name="external" size="small" /></a>
                 </List.Description>
               </List.Content>
             </List.Item>

@@ -37,6 +37,9 @@ class Sidebar extends React.Component {
         <Menu.Item name={router.route.jsonFormatter} active={router.isActive(router.route.jsonFormatter)} onClick={router.goTo}>
           <Icon name="code" />JSON format
         </Menu.Item>
+        <Menu.Item name={router.route.qrcode} active={router.isActive(router.route.qrcode)} onClick={router.goTo}>
+          <Icon name="qrcode" />QRCode
+        </Menu.Item>
         <Menu.Item href="https://plantuml-editor.kkeisuke.com/" target="_blank">
           <Icon name="external" />PlantUML Editor
         </Menu.Item>
