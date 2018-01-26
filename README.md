@@ -14,6 +14,10 @@ utility tools by kkeisuke.com
 
 ![JSON format](screenshot/jsonformat.png)
 
+### Qrcode generator
+
+![Qrcode](screenshot/qrcode.png)
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
