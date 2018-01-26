@@ -28,16 +28,11 @@ interface Iprops {
 @inject('jsonFormatter')
 @inject('jsonCodeMirror')
 @observer
-class JsonFormatter extends React.Component {
+class JsonFormatter extends React.Component<Iprops> {
 
   indentChange = (e: React.ChangeEvent<HTMLSelectElement>, props: FormProps) => {
-    const {
-      jsonFormatter,
-      jsonCodeMirror,
-    } = this.props as Iprops;
-
-    jsonFormatter.setIndent(e, props);
-    jsonCodeMirror.setIndent(e, props);
+    this.props.jsonFormatter.setIndent(e, props);
+    this.props.jsonCodeMirror.setIndent(e, props);
   }
 
   render() {
