@@ -14,9 +14,9 @@ utility tools by kkeisuke.com
 
 ![JSON format](screenshot/jsonformat.png)
 
-### Qrcode generator
+### QRcode generator
 
-![Qrcode generator](screenshot/qrcode.png)
+![QRcode generator](screenshot/qrcode.png)
 
 ---
 
