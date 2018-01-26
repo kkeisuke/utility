@@ -16,7 +16,7 @@ utility tools by kkeisuke.com
 
 ### Qrcode generator
 
-![Qrcode](screenshot/qrcode.png)
+![Qrcode generator](screenshot/qrcode.png)
 
 ---
 
