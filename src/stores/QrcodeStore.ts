@@ -98,7 +98,7 @@ export default class QrcodeStore {
   }
 
   isHexadecimal(color: string): boolean {
-    return color.match(this.colorPattern) !== null && Number.parseInt(color, 16) <= 4294967295;
+    return color.length <= 8 && color.match(this.colorPattern) !== null && Number.parseInt(color, 16) <= 4294967295;
   }
 
   resetIcon () {
