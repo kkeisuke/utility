@@ -28,7 +28,7 @@ export default class QrcodeStore {
   @observable widthMax: number = 2000;
   @observable dark: string;
   @observable light: string;
-  @observable colorPattern: string = '^[0-9A-Fa-f]+$';
+  @observable colorPattern: string = '^[0-9A-Fa-f]{3,}$';
 
   @observable file: HTMLInputElement;
   @observable canvas: HTMLCanvasElement;
