@@ -67,15 +67,15 @@ class Qrcode extends React.Component<Iprops> {
           <Divider hidden={true} />
           <Form.Group inline={true}>
             <Form.Input label="icon scale" value={qrcode.iconScale} type="number" step={qrcode.iconScaleStep} min={qrcode.iconScaleMin} max={qrcode.iconScaleMax} onChange={qrcode.changeIconScale} />
-            <Button onClick={this.clickFile} primary={true}>add icon</Button>　{qrcode.uploadedFile ? qrcode.uploadedFile.name : ''} {qrcode.uploadedFile ? `( ${qrcode.uploadedFile.type} )` : ''}
+            <Button type="button" onClick={this.clickFile} primary={true}>add icon</Button>　{qrcode.uploadedFile ? qrcode.uploadedFile.name : ''} {qrcode.uploadedFile ? `( ${qrcode.uploadedFile.type} )` : ''}
             <input type="file" id="file" />
           </Form.Group>
           <Divider hidden={true} />
           <Form.Group inline={true}>
             <Button.Group>
-              <Button onClick={qrcode.resetAction}>Reset</Button>
+              <Button type="button" onClick={qrcode.resetAction}>Reset</Button>
               <Button.Or />
-              <Button positive={true} onClick={qrcode.toCanvas} disabled={!Boolean(qrcode.text)} >Create</Button>
+              <Button type="button" positive={true} onClick={qrcode.toCanvas} disabled={!Boolean(qrcode.text)} >Create</Button>
             </Button.Group>
           </Form.Group>
         </Form>

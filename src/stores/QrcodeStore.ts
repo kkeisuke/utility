@@ -44,8 +44,8 @@ export default class QrcodeStore {
   widthDefault: number = 200;
   marginDefault: number = 0;
   darkDefault: string = '000000FF';
-  defaultLight: string = 'FFFFFF00';
-  defaultIconScale: number = 0.25;
+  lightDefault: string = 'FFFFFF00';
+  iconScaleDefault: number = 0.25;
 
   deleteMessage: string = 'Can I reset it?';
 
@@ -58,11 +58,19 @@ export default class QrcodeStore {
   }
 
   setWidth(width: number) {
-    this.width = width <= this.widthMax ? width : this.widthMax;
+    this.width = width;
+  }
+
+  getWidth(): number {
+    return this.width <= this.widthMax ? this.width || this.widthDefault : this.widthMax;
   }
 
   setMargin(margin: number) {
-    this.margin = margin <= this.marginMax ? margin : this.marginMax;
+    this.margin = margin;
+  }
+
+  getMargin(): number {
+    return this.margin <= this.marginMax ? this.margin || this.marginDefault : this.marginMax;
   }
 
   setDark(dark: string) {
@@ -78,11 +86,15 @@ export default class QrcodeStore {
   }
 
   getLightColor(): string {
-    return `#${this.isHexadecimal(this.light) ? this.light : this.defaultLight}`;
+    return `#${this.isHexadecimal(this.light) ? this.light : this.lightDefault}`;
   }
 
   setIconScale(iconScale: number) {
-    this.iconScale = iconScale <= this.iconScaleMax ? iconScale : this.iconScaleMax;
+    this.iconScale = iconScale;
+  }
+
+  getIconScale(): number {
+    return this.iconScale <= this.iconScaleMax ? this.iconScale || this.iconScaleDefault : this.iconScaleDefault;
   }
 
   isHexadecimal(color: string): boolean {
@@ -102,8 +114,8 @@ export default class QrcodeStore {
     this.setWidth(this.widthDefault);
     this.setMargin(this.marginDefault);
     this.setDark(this.darkDefault);
-    this.setLight(this.defaultLight);
-    this.setIconScale(this.defaultIconScale);
+    this.setLight(this.lightDefault);
+    this.setIconScale(this.iconScaleDefault);
     this.resetIcon();
   }
 
@@ -119,15 +131,16 @@ export default class QrcodeStore {
   drawIcon() {
     let dw: number;
     let dh: number;
+    const iconScale: number = this.getIconScale();
 
-    if (this.icon.width > this.canvas.width * this.iconScale) {
-      dw = this.canvas.width * this.iconScale;
+    if (this.icon.width > this.canvas.width * iconScale) {
+      dw = this.canvas.width * iconScale;
     } else {
       dw = this.icon.width;
     }
 
-    if (this.icon.height > this.canvas.height * this.iconScale) {
-      dh = this.canvas.height * this.iconScale;
+    if (this.icon.height > this.canvas.height * iconScale) {
+      dh = this.canvas.height * iconScale;
     } else {
       dh = this.icon.height;
     }
@@ -145,8 +158,8 @@ export default class QrcodeStore {
   @action.bound toCanvas() {
     if (this.canvas) {
       QRCode.toCanvas(this.canvas, this.text || this.textDefault, {
-        width: this.width || this.widthDefault,
-        margin: this.margin || this.marginDefault,
+        width: this.getWidth(),
+        margin: this.getMargin(),
         toSJISFunc: toSJIS,
         color: {
           dark: this.getDarkColor(),
