@@ -1,5 +1,6 @@
 // 型定義のため
 import { MenuItemProps } from 'semantic-ui-react';
+import { Location } from 'history';
 
 import {
   // observable,
@@ -11,11 +12,38 @@ import createBrowserHistory from 'history/createBrowserHistory';
 export default class RouterStore {
   history = createBrowserHistory();
   route = {
-    top: '/',
-    sqlFormatter: '/sql_formatter',
-    jsonFormatter: '/json_formatter',
-    qrcode: '/qrcode',
+    top: {
+      path: '/',
+      title: 'Utility'
+    },
+    sqlFormatter: {
+      path: '/sql_formatter',
+      title: 'SQL format : Utility'
+    },
+    jsonFormatter: {
+      path: '/json_formatter',
+      title: 'JSON format : Utility'
+    },
+    qrcode: {
+      path: '/qrcode',
+      title: 'QRCode : Utility'
+    }
   };
+
+  constructor() {
+    this.changeTitle(this.history.location);
+    this.history.listen((location: Location) => {
+      this.changeTitle(location);
+    });
+  }
+
+  changeTitle(location: Location) {
+    for (const route in this.route) {
+      if (this.route.hasOwnProperty(route) && this.route[route].path === location.pathname) {
+        document.title = this.route[route].title;
+      }
+    }
+  }
 
   @action.bound isActive(path: string): boolean {
     return location.pathname === path;
