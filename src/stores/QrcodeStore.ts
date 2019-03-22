@@ -19,23 +19,23 @@ interface ChromeCanvasRenderingContext2D extends CanvasRenderingContext2D {
 }
 
 export default class QrcodeStore {
-  @observable text: string;
-  @observable width: number;
-  @observable margin: number;
+  @observable text: string = '';
+  @observable width: number = 0;
+  @observable margin: number = 0;
   @observable marginMin: number = 0;
   @observable marginMax: number = 100;
   @observable widthMin: number = 0;
   @observable widthMax: number = 2000;
-  @observable dark: string;
-  @observable light: string;
+  @observable dark: string = '';
+  @observable light: string = '';
   @observable colorPattern: string = '^[0-9A-Fa-f]{3,}$';
 
-  @observable file: HTMLInputElement;
-  @observable canvas: HTMLCanvasElement;
-  @observable context: ChromeCanvasRenderingContext2D;
-  @observable icon: HTMLImageElement;
-  @observable uploadedFile: File | null;
-  @observable iconScale: number;
+  @observable file?: HTMLInputElement;
+  @observable canvas?: HTMLCanvasElement;
+  @observable context?: ChromeCanvasRenderingContext2D;
+  @observable icon?: HTMLImageElement;
+  @observable uploadedFile?: File | null;
+  @observable iconScale: number = 0;
   @observable iconScaleStep: number = 0.01;
   @observable iconScaleMin: number = 0.1;
   @observable iconScaleMax: number = 1;
@@ -120,6 +120,7 @@ export default class QrcodeStore {
   }
 
   loadImg(uploadedFile: File) {
+    if (!this.icon) { return }
     if (uploadedFile) {
       this.uploadedFile = uploadedFile;
       if (this.uploadedFile.type.indexOf('image/') === 0) {
@@ -129,6 +130,8 @@ export default class QrcodeStore {
   }
 
   drawIcon() {
+    if (!this.icon || !this.canvas || !this.context) { return }
+
     let dw: number;
     let dh: number;
     const iconScale: number = this.getIconScale();

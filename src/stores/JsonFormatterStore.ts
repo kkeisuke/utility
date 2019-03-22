@@ -1,7 +1,8 @@
 // 型定義のため
 import * as codemirror from 'codemirror';
 import {
-  FormProps,
+  DropdownProps,
+  TextAreaProps,
   DropdownItemProps,
 } from 'semantic-ui-react';
 
@@ -111,15 +112,15 @@ export default class JsonFormatterStore {
     return Number(this.indent) > 0 ? Number(this.indent) : this.indent;
   }
 
-  @action.bound format(e: React.ChangeEvent<HTMLTextAreaElement>) {
-    this.setText(e.target.value);
-    this.setTextlocalStorage(e.target.value);
-    this.setJson(this.stringify(e.target.value));
+  @action.bound format(e: React.FormEvent<HTMLTextAreaElement>, {value}: TextAreaProps) {
+    this.setText(String(value));
+    this.setTextlocalStorage(String(value));
+    this.setJson(this.stringify(String(value)));
   }
 
-  @action.bound setIndent(e: React.ChangeEvent<HTMLSelectElement>, {value}: FormProps) {
-    this._setIndent(value);
-    this.setIndentlocalStorage(value);
+  @action.bound setIndent(e: React.SyntheticEvent<HTMLElement>, {value}: DropdownProps) {
+    this._setIndent(String(value));
+    this.setIndentlocalStorage(String(value));
     this.setJson(this.stringify(this.text));
   }
 

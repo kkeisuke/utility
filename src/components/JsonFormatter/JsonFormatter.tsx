@@ -2,7 +2,7 @@
 import JsonFormatterStore from '../../stores/JsonFormatterStore';
 import JsonCodeMirrorStore from '../../stores/JsonCodeMirrorStore';
 import {
-  FormProps,
+  DropdownProps,
 } from 'semantic-ui-react';
 
 import * as React from 'react';
@@ -30,7 +30,7 @@ interface Iprops {
 @observer
 class JsonFormatter extends React.Component<Iprops> {
 
-  indentChange = (e: React.ChangeEvent<HTMLSelectElement>, props: FormProps) => {
+  indentChange = (e: React.SyntheticEvent<HTMLElement>, props: DropdownProps) => {
     this.props.jsonFormatter.setIndent(e, props);
     this.props.jsonCodeMirror.setIndent(e, props);
   }

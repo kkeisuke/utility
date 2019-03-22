@@ -1,7 +1,7 @@
 // 型定義のため
 import * as codemirror from 'codemirror';
 import {
-  FormProps,
+  DropdownProps,
 } from 'semantic-ui-react';
 
 import {
@@ -28,7 +28,7 @@ export default class JsonCodeMirrorStore {
     this.options.indentWithTabs = !(value > 0);
   }
 
-  @action.bound setIndent(e: React.ChangeEvent<HTMLSelectElement>, {value}: FormProps) {
+  @action.bound setIndent(e: React.SyntheticEvent<HTMLElement>, {value}: DropdownProps) {
     this.setIndentUnit(Number(value));
     this.setIndentWithTabs(Number(value));
   }

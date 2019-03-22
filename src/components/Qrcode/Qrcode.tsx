@@ -38,7 +38,9 @@ class Qrcode extends React.Component<Iprops> {
   }
 
   clickFile = () => {
-    this.props.qrcode.file.click();
+    if (this.props.qrcode.file) {
+      this.props.qrcode.file.click();
+    }
   }
 
   render() {

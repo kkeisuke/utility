@@ -1,5 +1,8 @@
 // 型定義のため
 import * as codemirror from 'codemirror';
+import {
+  TextAreaProps,
+} from 'semantic-ui-react';
 
 import {
   observable,
@@ -52,10 +55,10 @@ export default class SqlFormatterStore {
     return sqlFormatter.format(text).split(';').join('\n;\n');
   }
 
-  @action.bound format(e: React.ChangeEvent<HTMLTextAreaElement>) {
-    this.setText(e.target.value);
-    this.setlocalStorage(e.target.value);
-    this.setSql(this.sqlFormat(e.target.value));
+  @action.bound format(e: React.FormEvent<HTMLTextAreaElement>, {value}: TextAreaProps) {
+    this.setText(String(value));
+    this.setlocalStorage(String(value));
+    this.setSql(this.sqlFormat(String(value)));
   }
 
   @action.bound changeSql(editor: codemirror.Editor, data: codemirror.EditorChange, value: string) {

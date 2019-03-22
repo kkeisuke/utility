@@ -11,7 +11,7 @@ import { createBrowserHistory } from 'history';
 
 export default class RouterStore {
   history = createBrowserHistory();
-  route = {
+  route: { [ key: string ]: { path: string; title: string } } = {
     top: {
       path: '/',
       title: 'Utility'
