@@ -48,7 +48,7 @@ class JsonFormatter extends React.Component<Iprops> {
         </Header>
         <Form>
           <Form.Group widths="equal">
-            <Form.TextArea label="JSON" value={jsonFormatter.text} placeholder="paste unformatted JSON" onChange={jsonFormatter.format} autoHeight={true} />
+            <Form.TextArea label="JSON" value={jsonFormatter.text} placeholder="paste unformatted JSON" onChange={jsonFormatter.format} />
           </Form.Group>
           <Form.Group>
             <Form.Select label="indent" options={jsonFormatter.indents} value={jsonFormatter.indent} onChange={this.indentChange} />

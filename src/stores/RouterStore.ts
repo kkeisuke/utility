@@ -7,7 +7,7 @@ import {
   // computed,
   action,
 } from 'mobx';
-import createBrowserHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 
 export default class RouterStore {
   history = createBrowserHistory();

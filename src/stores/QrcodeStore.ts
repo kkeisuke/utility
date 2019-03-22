@@ -15,7 +15,7 @@ import toSJIS from 'qrcode/helper/to-sjis';
  * "It's currently only supported in Chrome."
  */
 interface ChromeCanvasRenderingContext2D extends CanvasRenderingContext2D {
-  imageSmoothingQuality: string;
+  ImageSmoothingQuality: string;
 }
 
 export default class QrcodeStore {
