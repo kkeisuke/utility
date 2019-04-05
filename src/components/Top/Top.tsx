@@ -78,6 +78,14 @@ class Top extends React.Component {
                 </List.Description>
               </List.Content>
             </List.Item>
+            <List.Item>
+              <List.Icon name="image" size="large" verticalAlign="middle" />
+              <List.Content>
+                <List.Header>
+                  <Link to={router.route.dummySVG.path}>Dummy SVG</Link>
+                </List.Header>
+              </List.Content>
+            </List.Item>
           </List>
         </Segment>
         <Header as="h2">Others</Header>

@@ -18,6 +18,10 @@ utility tools by kkeisuke.com
 
 ![QRcode generator](screenshot/qrcode.png)
 
+### Dummy SVG generator
+
+![Dummy SVG generator](screenshot/dummysvg.png)
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

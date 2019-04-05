@@ -18,6 +18,7 @@ import Top from '../Top/Top';
 import SqlFormatter from '../SqlFormatter/SqlFormatter';
 import JsonFormatter from '../JsonFormatter/JsonFormatter';
 import Qrcode from '../Qrcode/Qrcode';
+import DummySVG from '../DummySVG/DummySVG';
 import NotFound from './NotFound';
 
 import 'semantic-ui-css/semantic.min.css';
@@ -49,6 +50,7 @@ class App extends React.Component {
               <Route path="/sql_formatter" component={SqlFormatter}/>
               <Route path="/json_formatter" component={JsonFormatter}/>
               <Route path="/qrcode" component={Qrcode}/>
+              <Route path="/dummy_svg" component={DummySVG}/>
               <Route component={NotFound}/>
             </Switch>
             <Footer />

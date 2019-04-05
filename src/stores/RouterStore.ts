@@ -27,6 +27,10 @@ export default class RouterStore {
     qrcode: {
       path: '/qrcode',
       title: 'QRCode : Utility'
+    },
+    dummySVG: {
+      path: '/dummy_svg',
+      title: 'Dummy SVG : Utility'
     }
   };
 

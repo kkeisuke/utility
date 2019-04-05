@@ -11,6 +11,7 @@ import SqlCodeMirrorStore from './stores/SqlCodeMirrorStore';
 import JsonFormatterStore from './stores/JsonFormatterStore';
 import JsonCodeMirrorStore from './stores/JsonCodeMirrorStore';
 import QrcodeStore from './stores/QrcodeStore';
+import DummySVGStore from './stores/DummySVGStore';
 
 const stores = {
   router: new RouterStore(),
@@ -19,12 +20,14 @@ const stores = {
   jsonFormatter: new JsonFormatterStore(),
   jsonCodeMirror: new JsonCodeMirrorStore(),
   qrcode: new QrcodeStore(),
+  dummySVG: new DummySVGStore(),
 };
 
-ReactDOM.render(
+const provider = (
   <Provider {...stores}>
     <App />
-  </Provider>,
-  document.getElementById('root') as HTMLElement
+  </Provider>
 );
+
+ReactDOM.render(provider, document.getElementById('root') as HTMLElement);
 registerServiceWorker();
