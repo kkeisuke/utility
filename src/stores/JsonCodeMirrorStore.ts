@@ -28,7 +28,7 @@ export default class JsonCodeMirrorStore {
     this.options.indentWithTabs = !(value > 0);
   }
 
-  @action.bound setIndent(e: React.SyntheticEvent<HTMLElement>, {value}: DropdownProps) {
+  @action.bound setIndent(e: React.FormEvent<HTMLElement>, {value}: DropdownProps) {
     this.setIndentUnit(Number(value));
     this.setIndentWithTabs(Number(value));
   }

@@ -67,7 +67,7 @@ export default class SqlCodeMirrorStore {
     }
   }
 
-  @action.bound setOptions(e: React.SyntheticEvent<HTMLElement>, {value}: DropdownProps) {
+  @action.bound setOptions(e: React.FormEvent<HTMLElement>, {value}: DropdownProps) {
     this.setMode(String(value));
     this.setlocalStorage(String(value));
   }

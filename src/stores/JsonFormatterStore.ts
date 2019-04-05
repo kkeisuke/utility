@@ -118,7 +118,7 @@ export default class JsonFormatterStore {
     this.setJson(this.stringify(String(value)));
   }
 
-  @action.bound setIndent(e: React.SyntheticEvent<HTMLElement>, {value}: DropdownProps) {
+  @action.bound setIndent(e: React.FormEvent<HTMLElement>, {value}: DropdownProps) {
     this._setIndent(String(value));
     this.setIndentlocalStorage(String(value));
     this.setJson(this.stringify(this.text));

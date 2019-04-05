@@ -120,7 +120,7 @@ export default class QrcodeStore {
   }
 
   loadImg(uploadedFile: File) {
-    if (!this.icon) { return }
+    if (!this.icon) { return; }
     if (uploadedFile) {
       this.uploadedFile = uploadedFile;
       if (this.uploadedFile.type.indexOf('image/') === 0) {
@@ -130,7 +130,7 @@ export default class QrcodeStore {
   }
 
   drawIcon() {
-    if (!this.icon || !this.canvas || !this.context) { return }
+    if (!this.icon || !this.canvas || !this.context) { return; }
 
     let dw: number;
     let dh: number;
@@ -176,27 +176,27 @@ export default class QrcodeStore {
 
   }
 
-  @action.bound changeText(e: React.SyntheticEvent<HTMLInputElement>, data: InputOnChangeData) {
+  @action.bound changeText(e: React.FormEvent<HTMLInputElement>, data: InputOnChangeData) {
     this.setText(String(data.value));
   }
 
-  @action.bound changeWidth(e: React.SyntheticEvent<HTMLInputElement>, data: InputOnChangeData) {
+  @action.bound changeWidth(e: React.FormEvent<HTMLInputElement>, data: InputOnChangeData) {
     this.setWidth(Number(data.value));
   }
 
-  @action.bound changeMargin(e: React.SyntheticEvent<HTMLInputElement>, data: InputOnChangeData) {
+  @action.bound changeMargin(e: React.FormEvent<HTMLInputElement>, data: InputOnChangeData) {
     this.setMargin(Number(data.value));
   }
 
-  @action.bound changeDark(e: React.SyntheticEvent<HTMLInputElement>, data: InputOnChangeData) {
+  @action.bound changeDark(e: React.FormEvent<HTMLInputElement>, data: InputOnChangeData) {
     this.setDark(String(data.value));
   }
 
-  @action.bound changeLight(e: React.SyntheticEvent<HTMLInputElement>, data: InputOnChangeData) {
+  @action.bound changeLight(e: React.FormEvent<HTMLInputElement>, data: InputOnChangeData) {
     this.setLight(String(data.value));
   }
 
-  @action.bound changeIconScale(e: React.SyntheticEvent<HTMLInputElement>, data: InputOnChangeData) {
+  @action.bound changeIconScale(e: React.FormEvent<HTMLInputElement>, data: InputOnChangeData) {
     this.setIconScale(Number(data.value));
   }
 

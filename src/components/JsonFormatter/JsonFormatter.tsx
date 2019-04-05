@@ -30,7 +30,7 @@ interface Iprops {
 @observer
 class JsonFormatter extends React.Component<Iprops> {
 
-  indentChange = (e: React.SyntheticEvent<HTMLElement>, props: DropdownProps) => {
+  indentChange = (e: React.FormEvent<HTMLElement>, props: DropdownProps) => {
     this.props.jsonFormatter.setIndent(e, props);
     this.props.jsonCodeMirror.setIndent(e, props);
   }
