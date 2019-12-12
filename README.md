@@ -1,5 +1,7 @@
 # Utility
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/53f733d0-c34b-4b44-a76e-fc89bc95024d/deploy-status)](https://app.netlify.com/sites/utility-kkeisuke/deploys)
+
 https://utility.kkeisuke.com/
 
 utility tools by kkeisuke.com
